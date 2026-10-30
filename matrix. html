@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>System Error</title>
+    <style>
+        body { background: black; color: #00ff00; font-family: monospace; padding: 20px; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <div id="console"></div>
+
+    <script>
+        const lines = [
+            "Connecting to terminal...",
+            "Access granted.",
+            "Downloading internal_storage/DCIM/...",
+            "Error code: 0x80070005 - Access Denied",
+            "Bypassing security protocols...",
+            "Loading exploit: 'Stagefright.v2'...",
+            "SUCCESS: Access to camera established.",
+            "Streaming photos to remote server...",
+            "WARNING: Battery temperature critical!",
+            "Just kidding! 😜 Это просто сайт. Расслабься!"
+        ];
+        
+        let i = 0;
+        function type() {
+            if (i < lines.length) {
+                document.getElementById('console').innerHTML += lines[i] + "<br><br>";
+                i++;
+                setTimeout(type, 1500); // Строки появляются каждые 1.5 секунды
+            }
+        }
+        window.onload = type;
+    </script>
+</body>
+</html>
